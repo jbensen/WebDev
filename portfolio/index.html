@@ -3,12 +3,45 @@
 <!--
 	Name: Jacob Bensen
 	Date Created: 3/25/19
-	Most recent revision: 3/26/19
+	Most recent revision: 3/28/19
 -->
 
 <html lang="en">
 	<head>
 		<title>Jacob's Portfolio</title>
+		<link href="styles/main.css" rel="stylesheet" type="text/css" />
+		<style>
+			caption {
+				font-weight: bold;
+				font-size: 1.2em;
+				margin-bottom: 8px;
+			}
+			table, th, td {
+				border: 1px solid #0d1f2d;
+				border-collapse: collapse;
+				padding: 5px 10px;
+			}
+			table {
+				width: 90%;
+				margin: auto;
+			}
+			tr {
+				height: 30px;
+			}
+			th {
+				background-color: rgb(200,50,200,0.25);
+			}
+			tr:nth-child(odd) {
+				background-color: rgb(200,200,50,0.05);
+
+			}
+			tr:nth-child(even) {
+				background-color: rgb(200,50,200,0.05);
+
+			}
+
+
+		</style>
 	</head>
 	<body>
 		<main>
@@ -17,54 +50,65 @@
 				<h1>Portfolio for Jacob Bensen</h1>
 			</header>
 
-			<hr />
-			<nav>
+			<nav>  <!-- The nav element will include navigation buttons or links -->
 				<p><a href="index.html">Home</a></p>
 				<p><a href="projects.html">Projects</a></p>
 				<p><a href="contact.html">Contact</a></p>
 				<p><a href="testimonials.html">Testimonials</a></p>
 			</nav>
-			<hr />
+
+			<div class="clear-float"></div>
 
 			<section>
 				<article id="about-me">
 					<h2><em>About Me</em></h2>
-					<a href="images/self.jpg"><img src="images/self.jpg" alt="Photo of Jake" width="250"/></a>
+					<a href="images/self.jpg"><img src="images/self.jpg" alt="Photo of Jake" width="250" /></a>
 					<p>My name is Jake. I live in Roseville, MN. I lived in Texas for seven years.</p>
 					<p>I graduated from Sam Houston State University with a BS in Chemistry. I learned Python in college and used it for my final project in my advanced integrated laboratory course.</p>
 				</article>
 
+				<div class="clear-float"></div>
+
 				<article id="past-experiences">
 					<h2><em>Past Experiences</em></h2>
-					<a href="images/nerdlife.jpg"><img src="images/nerdlife.jpg" alt="Photo of Jake in school" width="250"/></a>
+					<a href="images/nerdlife.jpg"><img src="images/nerdlife.jpg" alt="Photo of Jake in school" width="250" /></a>
+					<div class="right-content">
 					<table>
-						<caption>Experience History</caption>
-						<tr>
-							<th>Time Period</th>
-							<th>Title</th>
-							<th>Company/Institution</th>
-						</tr>
-						<tr>
-							<td>Oct '18 - Present</td>
-							<td>Lab Inventory Specialist</td>
-							<td>Bio-Techne</td>
-						</tr>
-						<tr>
-							<td>July '18 - Oct '18</td>
-							<td>Lab Assistant</td>
-							<td>Kelly Services</td>
-						</tr>
-						<tr>
-							<td>Aug '13 - May '18</td>
-							<td>Chemistry Student</td>
-							<td>Sam Houston State University</td>
-						</tr>
+						<caption>Experience</caption>
+						<thead>
+							<tr>
+								<th>Time Period</th>
+								<th>Title</th>
+								<th>Company/Institution</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Oct '18 - Present</td>
+								<td>Lab Inventory Specialist</td>
+								<td>Bio-Techne</td>
+							</tr>
+							<tr>
+								<td>July '18 - Oct '18</td>
+								<td>Lab Assistant</td>
+								<td>Kelly Services</td>
+							</tr>
+							<tr>
+								<td>Aug '13 - May '18</td>
+								<td>Chemistry Student</td>
+								<td>Sam Houston State University</td>
+							</tr>
+						</tbody>
 					</table>
+					</div>
 				</article>
+
+				<div class="clear-float"></div>
 
 				<article id="hobbies">
 					<h2><em>Hobbies</em></h2>
-					<a href="images/myPC.jpg"><img src="images/myPC.jpg" alt="Photo of new computer build" width="250"/></a>
+					<a href="images/myPC.jpg"><img src="images/myPC.jpg" alt="Photo of new computer build" width="250" /></a>
+					<div class="right-content">
 					<ul>
 						<li>Indoors</li>
 						<ol>
@@ -81,11 +125,16 @@
 							<li>Travel</li>
 						</ol>
 					</ul>
+					</div>
 				</article>
+
+				<div class="clear-float"></div>
+
 			</section>
 
+			<br />
+
 			<footer>
-				<hr />
 				<p>&copy; 2020 Jacob Bensen. All rights reserved.</p>
 			</footer>
 		</main>
