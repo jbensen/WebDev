@@ -4,41 +4,58 @@
 	Most recent revision: 4/3/19
 */
 
-var money
-var result
-var diceCount
-var rollCount
-var moneyList
-
-function findMax(array, ){ //ignore for now.
-
-}
+var money;
+var result;
+var diceCount;
+var rollCount;
+var maxMoney;
+var maxMoneyRoll;
+var startBet;
+var moneyList = new Array();
 
 //Rolls the specified number of dice with the specified number of sides once.
 function rollDice(numDice, numSides){
 	result = Math.floor(Math.random() * numSides) + 1;
-	diceCount = 1
+	diceCount = 1;
 	while(diceCount < numDice){
 		result += Math.floor(Math.random() * numSides) + 1;
-		diceCount++
+		diceCount++;
 	}
 	return result;
 }
 
 //Records money value into an array. To be called after each roll of the dice.
-function recordMoney
+function recordMoney(array){
+	array.push(money);
+}
+
+//Searches array for the highest value and returns it as maxMoney. Roll count is returned as maxMoneyRoll.
+function findMax(array){
+	maxMoney = array[0];
+	maxMoneyRoll = 0;
+	for(i = 0; i <= array.length - 1; i ++){
+		if(maxMoney < array[i]){
+			maxMoney = array[i];
+			maxMoneyRoll = i;
+		}
+	}
+	return maxMoney;
+}
 
 
 //Plays the game Lucky Sevens.
 function playGame(){
-	rollCount = 0;
-	while(money > 0){
-		rollDice(2,6);
-		rollCount ++;
-		if(result == 7){
-			money += 4;
-		}else{
-			money -=1;
+	rollCount = 0;					//resets rollCount for new game
+	moneyList.length = 0;			//resets moneyList array to empty for new game
+	startBet = money;				//records initial money
+	while(money > 0){				//runs until money is 0 or less
+		recordMoney(moneyList);		//calls recordMoney function to add to moneyList
+		rollDice(2,6);				//calls rollDice function with two six-sided dice
+		rollCount ++;				//increments rollCount for this game instance
+		if(result == 7){			//if the roll result is 7
+			money += 4;				//add 4 to money
+		}else{						//if the roll result is not 7
+			money -= 1;				//subtract 1 from money
 		}
 	}
 }
