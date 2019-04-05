@@ -42,7 +42,6 @@ function findMax(array){
 	return maxMoney;
 }
 
-
 //Plays the game Lucky Sevens.
 function playGame(){
 	rollCount = 0;					//resets rollCount for new game
