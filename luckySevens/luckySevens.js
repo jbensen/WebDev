@@ -42,8 +42,28 @@ function findMax(array){
 	return maxMoney;
 }
 
+//Called when the input field for starting bet is changed.
+function addMoney(){
+	money = Number(document.getElementById("money").value);
+}
+
+//Called when money runs out in the playGame function.
+//Displays results block with relevant values, resets money input to zero.
+function gameOver(){
+	findMax(moneyList);
+	document.getElementById("maxMoney").innerText = maxMoney;
+	document.getElementById("maxMoneyRoll").innerText = maxMoneyRoll;
+	document.getElementById("startBet").innerText = startBet;
+	document.getElementById("rollCount").innerText = rollCount;
+	document.getElementById("results").style.display = "block";
+	document.getElementById("money").value = 0;
+}
+
 //Plays the game Lucky Sevens.
 function playGame(){
+	if(money<=0){
+		document.getElementById("error").style.display = "block";
+	}else{document.getElementById("error").style.display = "none";}
 	rollCount = 0;					//resets rollCount for new game
 	moneyList.length = 0;			//resets moneyList array to empty for new game
 	startBet = money;				//records initial money
@@ -56,6 +76,7 @@ function playGame(){
 		}else{						//if the roll result is not 7
 			money -= 1;				//subtract 1 from money
 		}
+	gameOver();
 	}
 }
 
